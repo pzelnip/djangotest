@@ -1,11 +1,12 @@
-from django.http import JsonResponse
-from django.shortcuts import render
+import logging
 
+from django.http import JsonResponse
 
 from .models import Counter
 
 
 def index(request):
+    logging.error("Requesting index...")
 
     result = {
         "counters": [
@@ -15,3 +16,8 @@ def index(request):
     }
 
     return JsonResponse(result)
+
+
+def health(request):
+    logging.debug("Checking health...")
+    return JsonResponse({"message": "ok"})

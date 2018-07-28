@@ -1,4 +1,5 @@
-pylint
-pydocstyle
-pylint-django
 black
+pydocstyle
+pylint
+pylint-django
+pylint-django

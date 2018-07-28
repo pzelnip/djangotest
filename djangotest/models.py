@@ -1,7 +1,7 @@
 from django.db import models
 
-# Create your models here.
 
+# Create your models here.
 class Counter(models.Model):
     """Model definition for Counter."""
 
