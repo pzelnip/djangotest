@@ -76,11 +76,13 @@ WSGI_APPLICATION = "djangotest.wsgi.application"
 
 DATABASES = {
     "default": {
-        "HOST": os.environ.get("DATABASE_HOST", "127.0.0.1"),
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "djangotest",
-        "USER": "ad0418340",
-        "PORT": "5432",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        # "HOST": os.environ.get("DATABASE_HOST", "127.0.0.1"),
+        # "ENGINE": "django.db.backends.postgresql",
+        # "PORT": "5432",
+        # "NAME": "djangotest",
+        # "USER": "ad0418340",
     }
 }
 
