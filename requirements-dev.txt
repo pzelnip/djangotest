@@ -2,4 +2,3 @@ black
 pydocstyle
 pylint
 pylint-django
-pylint-django
