@@ -1,5 +1,6 @@
 import json
 
+import pytest
 from django.test import TestCase
 from django.urls import reverse
 
@@ -28,8 +29,15 @@ class TestCounterViews(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(expected, content)
 
-    def test_get_counter_with_no_match_gives_404(self):
-        response = self.client.get(reverse("counters", args=[1234]))
-        content = json.loads(response.content)
 
-        self.assertEqual(response.status_code, 404)
+pytestmark = pytest.mark.django_db
+
+
+def test_get_counter_with_no_match_gives_404(client):
+    # Converted from a xUnit style test to a pytest test to show
+    # the usage of the pytest mark, and the client fixture
+
+    response = client.get(reverse("counters", args=[1234]))
+    content = json.loads(response.content)
+
+    assert response.status_code == 404
