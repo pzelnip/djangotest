@@ -29,6 +29,7 @@ from . import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.index, name="index"),
+    path("counters/", views.get_all_counters, name="get_all_counters"),
+    path("counters/<id>", views.get_counter, name="counters"),
     path("health", views.health, name="index"),
 ]
