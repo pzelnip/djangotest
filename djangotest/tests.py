@@ -30,9 +30,10 @@ class TestCounterViews(TestCase):
         self.assertEqual(expected, content)
 
 
-pytestmark = pytest.mark.django_db
+# pytestmark = pytest.mark.django_db
 
 
+@pytest.mark.django_db
 def test_get_counter_with_no_match_gives_404(client):
     # Converted from a xUnit style test to a pytest test to show
     # the usage of the pytest mark, and the client fixture
