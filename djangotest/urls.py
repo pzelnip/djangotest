@@ -1,12 +1,3 @@
-# from django.urls import path
-
-# from . import views
-
-# urlpatterns = [
-#     path('', views.index, name='index'),
-# ]
-
-
 """djangotest URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -23,13 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 
 from . import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("counters/", views.get_all_counters, name="get_all_counters"),
+    path("counters", views.get_all_counters, name="get_all_counters"),
     path("counters/<id>", views.get_counter, name="counters"),
     path("health", views.health, name="index"),
 ]
